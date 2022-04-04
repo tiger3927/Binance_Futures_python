@@ -19,8 +19,9 @@ def callback(data_type: 'SubscribeMessageType', event: 'any'):
     if data_type == SubscribeMessageType.RESPONSE:
         print("Event ID: ", event)
     elif  data_type == SubscribeMessageType.PAYLOAD:
-        PrintBasic.print_obj(event)
-        sub_client.unsubscribe_all()
+        #PrintBasic.print_obj(event)
+        print(event.open)
+        #sub_client.unsubscribe_all()
     else:
         print("Unknown Data:")
     print()

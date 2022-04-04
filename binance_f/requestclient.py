@@ -120,7 +120,7 @@ class RequestClient(object):
         self.refresh_limits(response[1])
         return response[0]
             
-    def get_mark_price(self, symbol: 'str' = None) -> any:
+    def get_mark_price(self, symbol: 'str') -> any:
         """
         Mark Price (MARKET_DATA)
 

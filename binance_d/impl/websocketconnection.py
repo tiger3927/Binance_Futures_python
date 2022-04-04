@@ -59,7 +59,7 @@ def websocket_func(*args):
     connection_instance.logger.info("[Sub][" + str(connection_instance.id) + "] Connecting...")
     connection_instance.delay_in_second = -1
     connection_instance.ws.on_open = on_open
-    connection_instance.ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
+    connection_instance.ws.run_forever(http_proxy_host='127.0.0.1', http_proxy_port=10809,sslopt={"cert_reqs": ssl.CERT_OPTIONAL})
     connection_instance.logger.info("[Sub][" + str(connection_instance.id) + "] Connection event loop down")
     if connection_instance.state == ConnectionState.CONNECTED:
         connection_instance.state = ConnectionState.IDLE

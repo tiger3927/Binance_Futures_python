@@ -48,5 +48,8 @@ class WebSocketWatchDog(threading.Thread):
 
     def on_connection_closed(self, connection):
         self.mutex.acquire()
-        self.connection_list.remove(connection)
+        try:
+            self.connection_list.remove(connection)
+        except Exception as e:
+            pass
         self.mutex.release()
